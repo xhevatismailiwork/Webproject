@@ -1,0 +1,356 @@
+:root {
+    --costumbroun: #c7c2c1;
+    --cost: #c7c2c1;
+    --bodybroun: #857b7a;
+    --cardcolor: #c7c2c1;
+}
+/* From Uiverse.io by joe-watson-sbf */ 
+.flip-card {
+  background-color: transparent;
+  width: 190px;
+  height: 254px;
+  perspective: 1000px;
+  font-family: sans-serif;
+  margin-top: auto;
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front {
+  background: linear-gradient(
+    120deg,
+    var(--costumbroun) 60%,
+    var(--cardcolor) 88%,
+    var(--cost) 40%,
+    var(--bodybroun) 48%
+  );
+  color: var(--cardcolor);
+}
+
+.flip-card-back {
+  background: linear-gradient(
+    120deg,
+    var(--bodybroun) 30%,
+    var(--costumbroun) 88%,
+    var(--cardcolor) 40%,
+    var(--cost) 78%
+  );
+  color: var(--costumbroun);
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid var(--bodybroun);
+  border-radius: 1rem;
+}
+/* From Uiverse.io by krlozCJ */ 
+#add-btn {
+  border: none;
+  outline: none;
+  background-color: var(--bodybroun);
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  border-radius: 5px;
+  transition: all ease 0.1s;
+  box-shadow: 0px 5px 0px 0px var(--costumbroun);
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+#add-btn:active {
+  transform: translateY(5px);
+  box-shadow: 0px 0px 0px 0px white;
+}
+
+.btn-53 {
+      position: relative;
+      padding: 1em 2em;
+      font-size: 1rem;
+      color: white;
+      background: #1e293b;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: 10px;
+      transition: background 0.3s ease;
+    }
+
+    .btn-53 .letters {
+      display: flex;
+      gap: 0.2em;
+    }
+
+    .btn-53:hover {
+      background: #334155;
+    }
+
+    .page-indicator {
+      color: white;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    /* From Uiverse.io by adamgiebl */ 
+.input-wrapper input {
+  background-color: #eee;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  width: 13em;
+  border-radius: 1rem;
+  color: #1e293b;
+  box-shadow: 0 0.4rem #dfd9d9;
+  cursor: pointer;
+ 
+}
+
+.input-wrapper input:focus {
+  outline-color: #1e293b;
+}
+
+/* From Uiverse.io by Rudra-M1 */ 
+.form-container {
+  width: 320px;
+  border-radius: 0.75rem;
+  background-color: #f7f7f7; /* light gray background */
+  padding: 2rem;
+  color: #333; /* dark gray text */
+  
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: #00698f; /* blue title */
+}
+
+.form {
+  margin-top: 1.5rem;
+}
+
+.input-group {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.input-group label {
+  display: block;
+  color: #666; /* dark gray label */
+  margin-bottom: 4px;
+}
+
+.input-group input {
+  width: 100%;
+  border-radius: 0.375rem;
+  border: 1px solid #ccc; /* light gray border */
+  outline: 0;
+  background-color: #f7f7f7; /* light gray background */
+  padding: 0.75rem 1rem;
+  color: #333; /* dark gray text */
+}
+
+.input-group input:focus {
+  border-color: #00698f; /* blue border on focus */
+}
+
+.forgot {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #666; /* dark gray forgot password */
+  margin: 8px 0 14px 0;
+}
+
+.forgot a,
+.signup a {
+  color: #333; /* dark gray link */
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot a:hover,
+.signup a:hover {
+  text-decoration: underline #00698f; /* blue underline on hover */
+}
+
+.sign {
+  display: block;
+  width: 100%;
+  background-color: #00698f; /* blue button */
+  padding: 0.75rem;
+  text-align: center;
+  color: #fff; /* white text */
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 600;
+}
+
+.social-message {
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.line {
+  height: 1px;
+  flex: 1 1 0%;
+  background-color: #ccc; /* light gray line */
+}
+
+.social-message .message {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #666; /* dark gray social message */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons .icon {
+  border-radius: 0.125rem;
+  padding: 0.75rem;
+  border: none;
+  background-color: transparent;
+  margin-left: 8px;
+}
+
+.social-icons .icon svg {
+  height: 1.25rem;
+  width: 1.25rem;
+  fill: #fff; /* white icon */
+}
+
+.signup {
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: #666; /* dark gray signup */
+}
+
+.back-button {
+  position: relative;
+  padding: 0.8em 1em;
+  outline: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  background-color: #333;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 18px;
+  font-family: inherit;
+  z-index: 0;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.back-button:hover {
+  animation: sh0 0.5s ease-in-out both;
+}
+
+@keyframes sh0 {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: rotate(7deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-7deg) translate3d(0, 0, 0);
+  }
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+.back-button:hover span {
+  animation: storm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+
+@keyframes storm {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    transform: translate3d(0, -5px, 0) scale(1.05);
+  }
+}
+
+.back-button::before,
+.back-button::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0;
+  transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
+              opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+  z-index: -1;
+  transform: translate(100%, -25%) translate3d(0, 0, 0);
+}
+
+.back-button:hover::before,
+.back-button:hover::after {
+  opacity: 0.15;
+  transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1),
+              opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.back-button:hover::before {
+  transform: translate3d(50%, 0, 0) scale(0.9);
+}
+
+.back-button:hover::after {
+  transform: translate(50%, 0) scale(1.1);
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+    <title>Movie</title>
+</head>
+<body style="background-color: var(--bodybroun);">
+    <section class="header"></section>
+    <section class="slider"></section>
+    <section class="latest-movies"></section>
+    <section class="movie"></section>
+    <section class="footer"></section>
+    <script type="module">
+    import Header from "./components/header.js";
+    import Footer from "./components/footer.js";
+    import Slides from "./resource/slides.js";
+    import Slider from "./components/slider.js";
+    import latestmovies from "./components/latestmovies.js";
+    import  Movies  from "./components/movies.js"; 
+
+    document.querySelector(".header").innerHTML = Header();
+    document.querySelector(".footer").innerHTML = Footer();
+
+    const slider = document.querySelector('.slider');
+    slider.innerHTML = `<img src="${Slides[0]}" alt="slide"/>`;
+
+    Slider({
+        slides: Slides,
+        active_slide: 0,
+        container: slider
+    });
+
+    // Latest Movies (e mbush seksionin "latest-movies")
+    latestmovies({
+        URL: "https://api.tvmaze.com/shows",
+        number_of_movies: 4,
+        container: document.querySelector(".latest-movies")
+    });
+
+
+    
+    const response = await fetch("https://api.tvmaze.com/shows");
+    const data = await response.json();
+    Movies({
+        container: document.querySelector(".movie"),
+        movies: data.slice(4, 8)
+    });
+    
+</script>
+</body>
+</html>

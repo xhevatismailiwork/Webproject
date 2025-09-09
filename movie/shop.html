@@ -1,0 +1,136 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/src/output.css" rel="stylesheet">
+        <link rel="stylesheet" href="/src/style.css">
+        <title>Shop - Movie Shop</title>
+    </head>
+    <body style="background-color: var(--bodybroun);" >
+
+        <section class="header"></section>
+        
+    
+    <section>
+        <div class="container mx-auto px-4 py-6">
+        
+        <div class="flex justify-center space-x-8 mb-5">
+            <button id="prev" class="btn-53">
+            <div class="letters">
+                <span>P</span><span>R</span><span>E</span><span>V</span>
+            </div>
+            </button>
+
+            <div id="page" class="page-indicator">Page: 1</div>
+
+            <button id="next" class="btn-53">
+            <div class="letters">
+                <span>N</span><span>E</span><span>X</span><span>T</span>
+            </div>
+            </button>
+        </div>
+
+        <div class="wrap-input-17 mb-6">
+    <div class="search-box flex justify-center">
+        <div class="input-wrapper">
+        <input type="text" placeholder="Search by title" name="text" class="input" />
+        </div>
+    </div>
+    </div>
+
+
+        <div id="shop" class="grid-cols-4 gap-6"></div>
+        </div>
+    </section>
+
+    <section class="footer"></section>
+
+    <script type="module">
+        import Header from "./components/header.js";
+        import Footer from "./components/footer.js";
+        import Movies from "./components/movies.js"; 
+
+        document.querySelector('.header').innerHTML = Header();
+        document.querySelector('.footer').innerHTML = Footer();
+
+        const container = document.querySelector('#shop');
+        const pageIndicator = document.getElementById('page');
+        const searchInput = document.querySelector('input[type="text"]');
+        const prevBtn = document.getElementById('prev');
+        const nextBtn = document.getElementById('next');
+
+        let page = 0;
+        let inSearch = false;
+
+        async function loadMovies(pageNumber) {
+        try {
+            const res = await fetch(`https://api.tvmaze.com/shows?page=${pageNumber}`);
+            const data = await res.json();
+
+            if (data.length === 0) {
+            if (page > 0) page--;
+            return;
+            }
+
+            Movies({ container, movies: data });
+            pageIndicator.textContent = `Page: ${page + 1}`;
+        } catch (error) {
+            container.innerHTML = "<p class='text-white text-center'>Failed to load movies.</p>";
+            console.error(error);
+        }
+        }
+
+        async function searchMovies(query) {
+        try {
+            const res = await fetch(`https://api.tvmaze.com/search/shows?q=${query}`);
+            const data = await res.json();
+            const results = data.map(item => item.show);
+
+            if (results.length === 0) {
+            container.innerHTML = "<p class='text-white text-center'>No results found.</p>";
+            } else {
+            Movies({ container, movies: results });
+            pageIndicator.textContent = `Search results for "${query}"`;
+            
+            }
+        } catch (error) {
+            container.innerHTML = "<p class='text-white text-center'>Search failed.</p>";
+        }
+        }
+
+        // Initial load
+        loadMovies(page);
+
+        prevBtn.addEventListener('click', () => {
+        if (!inSearch && page > 0) {
+            page--;
+            loadMovies(page);
+        }
+        });
+
+        nextBtn.addEventListener('click', () => {
+        if (!inSearch) {
+            page++;
+            loadMovies(page);
+        }
+        });
+
+        searchInput.addEventListener('keyup', event => {
+        const title = event.target.value.trim();
+
+        if (event.key === 'Enter' && title.length > 0) {
+            inSearch = true;
+            searchMovies(title);
+        }
+
+        if (event.key === 'Escape') {
+            inSearch = false;
+            searchInput.value = '';
+            page = 0;
+            loadMovies(page);
+        }
+        });
+        </script>
+    </body>
+    </html>

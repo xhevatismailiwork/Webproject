@@ -1,0 +1,12 @@
+OMDb API (kërkon një API key falas)
+:point_right: https://www.omdbapi.com/?apikey=yourkey&s=Batman
+ose TVMaze API (nuk ka nevojë për key).
+
+let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+localStorage.setItem("favorites", JSON.stringify(favorites));
+Për të marrë filma nga API me fetch:
+fetch("https://api.tvmaze.com/search/shows?q=batman")
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  });
