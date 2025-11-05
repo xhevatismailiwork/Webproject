@@ -1,0 +1,147 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "name": "Ada Lovelace",
+      "email": "ada@academy.edu",
+      "program": "Software Engineering",
+      "status": "Active",
+      "tags": [
+        "Scholarship"
+      ]
+    },
+    {
+      "id": "fdba",
+      "name": "xhevat",
+      "email": "xhevat@gmail.com",
+      "program": "cst",
+      "status": "Inactive"
+    },
+    {
+      "id": "57a8",
+      "name": "lumi",
+      "email": "xhevat@gmail.com",
+      "program": "cst",
+      "status": "Active"
+    },
+    {
+      "id": "bb93",
+      "name": "zaim",
+      "email": "zaim@gmail.com",
+      "program": "dev",
+      "status": "Active"
+    },
+    {
+      "id": "c166",
+      "name": "Alaudin",
+      "email": "Alaudin.123@gmail.com",
+      "program": "cst",
+      "status": "Active"
+    }
+  ],
+  "courses": [
+    {
+      "id": "1",
+      "title": "Web Development 101",
+      "category": "Web",
+      "instructor": "Dr. Turing",
+      "credits": 6
+    },
+    {
+      "id": "4544",
+      "title": "react",
+      "category": "cst",
+      "instructor": "xhevat",
+      "credits": 6
+    },
+    {
+      "id": "f3b4",
+      "title": "python",
+      "category": "cst",
+      "instructor": "besnik",
+      "credits": 6
+    },
+    {
+      "id": "ea97",
+      "title": ".net",
+      "category": "cst",
+      "instructor": "blerand",
+      "credits": 3
+    }
+  ],
+  "enrollments": [
+    {
+      "id": "1",
+      "studentId": 1,
+      "courseId": 1,
+      "enrolledAt": "2025-09-01",
+      "progress": 35,
+      "status": "Enrolled"
+    },
+    {
+      "id": "c717",
+      "studentId": "fdba",
+      "courseId": "4544",
+      "enrolledAt": "2025-10-01",
+      "progress": 4,
+      "status": "Enrolled"
+    },
+    {
+      "id": "aee8",
+      "studentId": "57a8",
+      "courseId": 1,
+      "enrolledAt": "2025-10-01",
+      "progress": 56,
+      "status": "Enrolled"
+    },
+    {
+      "id": "026b",
+      "studentId": "fdba",
+      "courseId": "4544",
+      "enrolledAt": "2025-10-09",
+      "progress": 100,
+      "status": "Completed"
+    },
+    {
+      "id": "53cb",
+      "studentId": "fdba",
+      "courseId": "1",
+      "enrolledAt": "2025-10-04",
+      "progress": 75,
+      "status": "Completed"
+    },
+    {
+      "id": "ed0f",
+      "studentId": "c166",
+      "courseId": "ea97",
+      "enrolledAt": "2025-11-05",
+      "progress": 27,
+      "status": "Enrolled"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Intern User",
+      "email": "intern@example.com",
+      "password": "123456"
+    },
+    {
+      "id": "a100",
+      "name": "xhevat",
+      "email": "xhevatismaili20@gmail.com",
+      "password": "111"
+    },
+    {
+      "id": "9008",
+      "name": "lumi",
+      "email": "lumi@gmail.com",
+      "password": "000"
+    }
+  ],
+  "me": {
+    "name": "2221212Intern User",
+    "email": "intern@example.com",
+    "avatar": "1212"
+  }
+}
